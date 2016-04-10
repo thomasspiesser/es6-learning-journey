@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:classes": "babel -w classes/code/ -d classes/build/ --source-maps",
+    "build:objectOriented": "babel -w objectOriented/code/ -d objectOriented/build/ --source-maps",
     "build:linkedLists": "babel -w linkedLists/code/ -d linkedLists/build/ --source-maps",
     "build:destructuring": "babel -w destructuring/code/ -d destructuring/build/ --source-maps"
   },
