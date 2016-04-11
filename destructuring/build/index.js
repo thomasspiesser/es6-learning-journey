@@ -135,4 +135,66 @@ germanTitle = _data2$translations[0].title;
 frenchTitle = _data2$translations[1].title;
 
 console.log(englishTitle, germanTitle, frenchTitle);
+
+// for of iteration and destructuring
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+  for (var _iterator = data.translations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var _step$value = _step.value;
+    var t = _step$value.title;
+    var l = _step$value.locale;
+
+    console.log('Title: ' + t + ', language: ' + l);
+  }
+
+  // pull fields from object passed as function params
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
+
+function userId(_ref2) {
+  var id = _ref2.id;
+
+  return id;
+}
+function whois(_ref3) {
+  var displayName = _ref3.displayName;
+  var name = _ref3.fullName.firstName;
+
+  console.log(displayName + " is " + name);
+}
+
+var user = {
+  id: 42,
+  displayName: "jdoe",
+  fullName: {
+    firstName: "John",
+    lastName: "Doe"
+  }
+};
+
+console.log("userId: " + userId(user)); // "userId: 42"
+whois(user); // "jdoe is John"
+
+// computed object property names
+var key = "z";
+var obj = { z: "peter" };
+var onkel = obj[key];
+
+
+console.log(onkel);
 //# sourceMappingURL=index.js.map

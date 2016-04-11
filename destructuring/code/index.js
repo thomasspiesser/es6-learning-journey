@@ -91,5 +91,34 @@ let frenchTitle;
 ({ title: englishTitle, translations: [{ title: germanTitle }, { title: frenchTitle }] } = data);
 console.log(englishTitle, germanTitle, frenchTitle);
 
+// for of iteration and destructuring
+for (let {title: t, locale: l} of data.translations) {
+  console.log(`Title: ${t}, language: ${l}`);
+}
 
+// pull fields from object passed as function params
+function userId({id}) {
+  return id;
+}
+function whois({displayName: displayName, fullName: {firstName: name}}){
+  console.log(displayName + " is " + name);
+}
 
+var user = { 
+  id: 42, 
+  displayName: "jdoe",
+  fullName: { 
+      firstName: "John",
+      lastName: "Doe"
+  }
+};
+
+console.log("userId: " + userId(user)); // "userId: 42"
+whois(user); // "jdoe is John"
+
+// computed object property names
+let key = "z";
+let obj = { z: "peter" }
+let { [key]: onkel } = obj;
+
+console.log(onkel);
