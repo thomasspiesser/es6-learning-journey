@@ -56,6 +56,7 @@ console.log(a);
 console.log(b);
 
 // function parameter default value
+// ={} makes them optional
 function test({par1='here', par2='there'} = {}) {
   console.log(par1, par2);
 }
